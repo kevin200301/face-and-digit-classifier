@@ -307,33 +307,33 @@ def readCommand( argv ):
 
     if(options.classifier == "mostFrequent"):
         classifier = mostFrequent.MostFrequentClassifier(legalLabels)
-    # elif(options.classifier == "naiveBayes" or options.classifier == "nb"):
-    #     classifier = naiveBayes.NaiveBayesClassifier(legalLabels)
-    #     classifier.setSmoothing(options.smoothing)
-    #     if (options.autotune):
-    #         print ("using automatic tuning for naivebayes")
-    #         classifier.automaticTuning = True
-    #     else:
-    #         print ("using smoothing parameter k=%f for naivebayes" %  options.smoothing)
-    # elif(options.classifier == "perceptron"):
-    #     if options.data != 'pacman':
-    #         classifier = perceptron.PerceptronClassifier(legalLabels,options.iterations)
-    #     else:
-    #         classifier = perceptron_pacman.PerceptronClassifierPacman(legalLabels,options.iterations)
-    # elif(options.classifier == "mira"):
-    #     if options.data != 'pacman':
-    #         classifier = mira.MiraClassifier(legalLabels, options.iterations)
-    #     if (options.autotune):
-    #         print ("using automatic tuning for MIRA")
-    #         classifier.automaticTuning = True
-    #     else:
-    #         print ("using default C=0.001 for MIRA")
-    # elif(options.classifier == 'minicontest'):
-    #     import minicontest
-    #     classifier = minicontest.contestClassifier(legalLabels)
-    # else:
-    #     print ("Unknown classifier:", options.classifier)
-    #     print (USAGE_STRING)
+    elif(options.classifier == "naiveBayes" or options.classifier == "nb"):
+        classifier = naiveBayes.NaiveBayesClassifier(legalLabels)
+        classifier.setSmoothing(options.smoothing)
+        if (options.autotune):
+            print ("using automatic tuning for naivebayes")
+            classifier.automaticTuning = True
+        else:
+            print ("using smoothing parameter k=%f for naivebayes" %  options.smoothing)
+    elif(options.classifier == "perceptron"):
+        if options.data != 'pacman':
+            classifier = perceptron.PerceptronClassifier(legalLabels,options.iterations)
+        else:
+            classifier = perceptron_pacman.PerceptronClassifierPacman(legalLabels,options.iterations)
+    elif(options.classifier == "mira"):
+        if options.data != 'pacman':
+            classifier = mira.MiraClassifier(legalLabels, options.iterations)
+        if (options.autotune):
+            print ("using automatic tuning for MIRA")
+            classifier.automaticTuning = True
+        else:
+            print ("using default C=0.001 for MIRA")
+    elif(options.classifier == 'minicontest'):
+        import minicontest
+        classifier = minicontest.contestClassifier(legalLabels)
+    else:
+        print ("Unknown classifier:", options.classifier)
+        print (USAGE_STRING)
 
         sys.exit(2)
 
@@ -376,12 +376,12 @@ def runClassifier(args, options):
         rawValidationData, validationLabels = samples.loadPacmanData(validationData, numTest)
         rawTestData, testLabels = samples.loadPacmanData(testData, numTest)
     else:
-        rawTrainingData = samples.loadDataFile("digitdata/trainingimages", numTraining,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
-        trainingLabels = samples.loadLabelsFile("digitdata/traininglabels", numTraining)
-        rawValidationData = samples.loadDataFile("digitdata/validationimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
-        validationLabels = samples.loadLabelsFile("digitdata/validationlabels", numTest)
-        rawTestData = samples.loadDataFile("digitdata/testimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
-        testLabels = samples.loadLabelsFile("digitdata/testlabels", numTest)
+        rawTrainingData = samples.loadDataFile("data/digitdata/trainingimages", numTraining,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
+        trainingLabels = samples.loadLabelsFile("data/digitdata/traininglabels", numTraining)
+        rawValidationData = samples.loadDataFile("data/digitdata/validationimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
+        validationLabels = samples.loadLabelsFile("data/digitdata/validationlabels", numTest)
+        rawTestData = samples.loadDataFile("data/digitdata/testimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
+        testLabels = samples.loadLabelsFile("data/digitdata/testlabels", numTest)
 
 
     # Extract features
