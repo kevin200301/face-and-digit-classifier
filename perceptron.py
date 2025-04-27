@@ -14,9 +14,10 @@
 
 # Perceptron implementation
 import util
+import classificationMethod
 PRINT = True
 
-class PerceptronClassifier:
+class PerceptronClassifier(classificationMethod.ClassificationMethod):
     """
     Perceptron classifier.
 
@@ -57,7 +58,7 @@ class PerceptronClassifier:
                 "*** YOUR CODE HERE ***"
                 util.raiseNotDefined()
 
-    def classify(self, data ):
+    def classify(self, data):
         """
         Classifies each datum as the label that most closely matches the prototype vector
         for that label.  See the project description for details.

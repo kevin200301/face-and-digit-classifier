@@ -1,0 +1,4 @@
+Classifier: mostFrequent
+Data: digits
+100 training
+100 testing

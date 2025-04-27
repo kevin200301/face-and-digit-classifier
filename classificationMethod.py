@@ -13,14 +13,13 @@
 
 
 # This file contains the abstract class ClassificationMethod
+from abc import ABC, abstractmethod
 
-class ClassificationMethod:
+class ClassificationMethod(ABC):
     """
     ClassificationMethod is the abstract superclass of
      - MostFrequentClassifier
-     - NaiveBayesClassifier
      - PerceptronClassifier
-     - MiraClassifier
 
     As such, you need not add any code to this file.  You can write
     all of your implementation code in the files for the individual
@@ -33,7 +32,7 @@ class ClassificationMethod:
         """
         self.legalLabels = legalLabels
 
-
+    @abstractmethod
     def train(self, trainingData, trainingLabels, validationData, validationLabels):
         """
         This is the supervised training function for the classifier.  Two sets of
@@ -49,8 +48,9 @@ class ClassificationMethod:
         To make the classifier generic to multiple problems, the data should be represented
         as lists of Counters containing feature descriptions and their counts.
         """
-        abstract
+        pass
 
+    @abstractmethod
     def classify(self, data):
         """
         This function returns a list of labels, each drawn from the set of legal labels
@@ -59,6 +59,6 @@ class ClassificationMethod:
         To make the classifier generic to multiple problems, the data should be represented
         as lists of Counters containing feature descriptions and their counts.
         """
-        abstract
+        pass
 
   

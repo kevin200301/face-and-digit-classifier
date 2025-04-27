@@ -15,7 +15,6 @@
 import sys
 import inspect
 import heapq, random
-import io
 
 
 class FixedRandom:
@@ -275,15 +274,12 @@ class Counter(dict):
         Returns the key with the highest value.
         """
         if len(self.keys()) == 0: return None
-        all = self.items()
+        all = list(self.items())
         values = [x[1] for x in all]
-        print(values)
         maxIndex = values.index(max(values))
-        print(maxIndex)
-        print(all[maxIndex][0])
         return all[maxIndex][0]
 
-    def sortedKeys(self):
+    def sortedKey(self):
         """
         Returns a list of keys sorted by their values.  Keys
         with the highest values will appear first.
@@ -653,6 +649,3 @@ def unmutePrint():
 
     sys.stdout = _ORIGINAL_STDOUT
     #sys.stderr = _ORIGINAL_STDERR
-
-
-  

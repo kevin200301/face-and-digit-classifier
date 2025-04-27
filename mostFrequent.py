@@ -31,7 +31,7 @@ class MostFrequentClassifier(classificationMethod.ClassificationMethod):
         """
         counter = util.Counter()
         counter.incrementAll(labels, 1)
-        print('here')
+        # print('here')
         self.guess = counter.argMax()
 
     def classify(self, testData):
