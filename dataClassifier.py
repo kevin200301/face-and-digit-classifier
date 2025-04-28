@@ -128,7 +128,7 @@ def analysis(classifier, guesses, testLabels, testData, rawTestData, printImage)
     #         print rawTestData[i]
     #         break
 
-    for i in range(len(guesses)):
+    for i in range(len(guesses)): # refactor
       prediction = guesses[i]
       truth = testLabels[i]
       if (prediction == truth):
@@ -243,8 +243,9 @@ def readCommand( argv ):
 
     if(options.data=="digits"):
         legalLabels = range(10)
+        # legalLabels = list(range(10)) # SHOULD THIS BE A LIST INSTEAD?
     else:
-        legalLabels = ['Stop', 'West', 'East', 'North', 'South']
+        legalLabels = ['Stop', 'West', 'East', 'North', 'South'] # ???
 
     if options.training <= 0:
         print ("Training set size should be a positive integer (you provided: %d)" % options.training)

@@ -61,7 +61,7 @@ class Datum:
         Create a new datum from file input (standard MNIST encoding).
         """
         DATUM_HEIGHT = height
-        DATUM_WIDTH=width
+        DATUM_WIDTH = width
         self.height = DATUM_HEIGHT
         self.width = DATUM_WIDTH
         if data == None:
@@ -98,7 +98,7 @@ class Datum:
 
 # Data processing, cleanup and display functions
 
-def loadDataFile(filename, n,width,height):
+def loadDataFile(filename, n,width,height): # I DONT THINK THIS IS WORKIING, NO GOOD ACTUALLY
     """
     Reads n data images from a file and returns a list of Datum objects.
 
@@ -171,7 +171,7 @@ def convertToInteger(data):
     if type(data) != type([]):
         return IntegerConversionFunction(data)
     else:
-        return map(convertToInteger, data)
+        return list(map(convertToInteger, data))
 
 # Testing
 
