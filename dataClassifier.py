@@ -129,13 +129,13 @@ def analysis(classifier, guesses, testLabels, testData, rawTestData, printImage)
     #         break
 
     for i in range(len(guesses)): # refactor
-      prediction = guesses[i]
-      truth = testLabels[i]
-      if (prediction == truth):
-          print ("===================================")
-          print ("True with example %d") % i 
-          print ("Predicted %d; truth is %d") % (prediction, truth)
-          break
+        prediction = guesses[i]
+        truth = testLabels[i]
+        if (prediction == truth):
+            print ("===================================")
+            print (("True with example %d") % i )
+            print (("Predicted %d; truth is %d") % (prediction, truth))
+            break
 
 ## =====================
 ## You don't have to modify any code below.
@@ -337,9 +337,10 @@ def runClassifier(args, options):
 
     # Extract features
     print ("Extracting features...")
-    trainingData = map(featureFunction, rawTrainingData)
-    validationData = map(featureFunction, rawValidationData)
-    testData = map(featureFunction, rawTestData)
+    # print(rawTrainingData[0])
+    trainingData = list(map(featureFunction, rawTrainingData)) # converted to list
+    validationData = list(map(featureFunction, rawValidationData)) # converted to list
+    testData = list(map(featureFunction, rawTestData)) # converted to list
 
     # Conduct training and testing
     print ("Training...")
