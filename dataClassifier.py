@@ -244,7 +244,7 @@ def readCommand( argv ):
     if(options.data=="digits"):
         legalLabels = [x for x in range(10)]
     else:
-        legalLabels = ['Stop', 'West', 'East', 'North', 'South'] # ???
+        legalLabels = [0, 1]
 
     if options.training <= 0:
         print ("Training set size should be a positive integer (you provided: %d)" % options.training)

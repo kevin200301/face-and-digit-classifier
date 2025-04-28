@@ -1,0 +1,71 @@
+Classifier: perceptron
+Data: faces
+100 training
+100 testing
+Classifier: perceptron
+Data: faces
+100 training
+100 testing
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.8965680599212646']
+39.0
+
+Classifier: mostFrequent
+Data: digits
+100 training
+100 testing
+['0.0030508041381835938']
+14.0
+
+Classifier: mostFrequent
+Data: faces
+100 training
+100 testing
+['4.935264587402344e-05']
+53.0
+
+Classifier: mostFrequent
+Data: faces
+100 training
+100 testing
+['7.009506225585938e-05']
+53.0
+
+Classifier: mostFrequent
+Data: faces
+100 training
+100 testing
+['6.771087646484375e-05']
+53.0
+
+Classifier: mostFrequent
+Data: faces
+100 training
+100 testing
+['0.00011205673217773438']
+53.0
+
+Classifier: mostFrequent
+Data: faces
+100 training
+100 testing
+['6.508827209472656e-05']
+53.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.8675990104675293']
+39.0
+
+Classifier: perceptron
+Data: faces
+100 training
+100 testing
+['3.5869789123535156']
+47.0
+
