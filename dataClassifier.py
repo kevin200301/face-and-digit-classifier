@@ -194,7 +194,7 @@ def readCommand( argv ):
     parser = OptionParser(USAGE_STRING)
 
     parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest'], default='mostFrequent')
-    parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces', 'pacman'], default='digits')
+    parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces'], default='digits')
     parser.add_option('-t', '--training', help=default('The size of the training set'), default=100, type="int")
     parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
     parser.add_option('-o', '--odds', help=default('Whether to compute odds ratios'), default=False, action="store_true")
@@ -242,8 +242,7 @@ def readCommand( argv ):
         sys.exit(2)
 
     if(options.data=="digits"):
-        legalLabels = range(10)
-        # legalLabels = list(range(10)) # SHOULD THIS BE A LIST INSTEAD?
+        legalLabels = [x for x in range(10)]
     else:
         legalLabels = ['Stop', 'West', 'East', 'North', 'South'] # ???
 
@@ -273,11 +272,8 @@ def readCommand( argv ):
     #         classifier.automaticTuning = True
     #     else:
     #         print ("using smoothing parameter k=%f for naivebayes" %  options.smoothing)
-    # elif(options.classifier == "perceptron"):
-    #     if options.data != 'pacman':
-    #         classifier = perceptron.PerceptronClassifier(legalLabels,options.iterations)
-    #     else:
-    #         classifier = perceptron_pacman.PerceptronClassifierPacman(legalLabels,options.iterations)
+    elif(options.classifier == "perceptron"):
+        classifier = perceptron.PerceptronClassifier(legalLabels, options.iterations)
     # elif(options.classifier == "mira"):
     #     if options.data != 'pacman':
     #         classifier = mira.MiraClassifier(legalLabels, options.iterations)

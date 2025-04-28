@@ -53,10 +53,13 @@ class PerceptronClassifier(classificationMethod.ClassificationMethod):
         # THE AUTOGRADER WILL LIKELY DEDUCT POINTS.
 
         for iteration in range(self.max_iterations):
-            print("Starting iteration ", iteration, "...")
+            print("Starting iteration", iteration, "...")
             for i in range(len(trainingData)):
-                "*** YOUR CODE HERE ***"
-                util.raiseNotDefined()
+                real = trainingLabels[i]
+                guess = self.classify(trainingData[i])[0]
+                if real != guess:
+                    self.weights[real] += trainingData[i]
+                    self.weights[guess] -= trainingData[i]
 
     def classify(self, data):
         """
