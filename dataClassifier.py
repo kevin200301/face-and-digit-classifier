@@ -69,12 +69,18 @@ def enhancedFeatureExtractorDigit(datum):
     for this datum (datum is of type samples.Datum).
 
     ## DESCRIBE YOUR ENHANCED FEATURES HERE...
-
+    The basicFeatureExtractorDigit() function converts anything greater than 1 to 1.
+    This means that it maps both '+' and '#' to 1, losing information.
+    The enhancedFeatureExtractorDigit() function preserves information and maps '+' to 1 and '#' to 2.
     ##
     """
-    features =  basicFeatureExtractorDigit(datum)
+    # features =  basicFeatureExtractorDigit(datum)
 
     "*** YOUR CODE HERE ***"
+    features = util.Counter()
+    for x in range(DIGIT_DATUM_WIDTH):
+        for y in range(DIGIT_DATUM_HEIGHT):
+            features[(x,y)] = datum.getPixel(x,y)
 
     return features
 
@@ -333,7 +339,6 @@ def runClassifier(args, options):
 
     # Extract features
     print ("Extracting features...")
-    # print(rawTrainingData[0])
     trainingData = list(map(featureFunction, rawTrainingData)) # converted to list
     validationData = list(map(featureFunction, rawValidationData)) # converted to list
     testData = list(map(featureFunction, rawTestData)) # converted to list

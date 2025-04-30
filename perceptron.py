@@ -56,7 +56,7 @@ class PerceptronClassifier(classificationMethod.ClassificationMethod):
             print("Starting iteration", iteration, "...")
             for i in range(len(trainingData)):
                 real = trainingLabels[i]
-                guess = self.classify(trainingData[i])[0]
+                guess = self.classify([trainingData[i]])[0]
                 if real != guess:
                     self.weights[real] += trainingData[i]
                     self.weights[guess] -= trainingData[i]
