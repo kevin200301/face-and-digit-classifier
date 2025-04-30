@@ -69,3 +69,17 @@ Data: faces
 ['3.5869789123535156']
 47.0
 
+Classifier: perceptron
+Data: faces
+100 training
+100 testing
+['1.7357711791992188']
+81.0
+
+Classifier: mostFrequent
+Data: digits
+100 training
+100 testing
+['6.127357482910156e-05']
+14.0
+
