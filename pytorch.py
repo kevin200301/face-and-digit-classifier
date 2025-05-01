@@ -46,10 +46,6 @@ if __name__ == "__main__":
     rawTestData = samples.loadDataFile("digitdata/testimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
     testLabels = samples.loadLabelsFile("digitdata/testlabels", numTest)
     
-    trainingData = list(map(featureFunction, rawTrainingData)) # converted to list
-    validationData = list(map(featureFunction, rawValidationData)) # converted to list
-    testData = list(map(featureFunction, rawTestData)) # converted to list
-
     nn = PyTorch()
 
     cross_el = nn.CrossEntropyLoss()
