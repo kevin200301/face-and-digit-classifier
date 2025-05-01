@@ -98,7 +98,7 @@ class Datum:
 
 # Data processing, cleanup and display functions
 
-def loadDataFile(filename, n,width,height): # I DONT THINK THIS IS WORKIING, NO GOOD ACTUALLY
+def loadDataFile(filename, n,width,height):
     """
     Reads n data images from a file and returns a list of Datum objects.
 
