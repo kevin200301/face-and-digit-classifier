@@ -17,6 +17,7 @@
 
 import mostFrequent
 import perceptron
+import neuralnet
 import samples
 import sys
 import util
@@ -69,18 +70,12 @@ def enhancedFeatureExtractorDigit(datum):
     for this datum (datum is of type samples.Datum).
 
     ## DESCRIBE YOUR ENHANCED FEATURES HERE...
-    The basicFeatureExtractorDigit() function converts anything greater than 1 to 1.
-    This means that it maps both '+' and '#' to 1, losing information.
-    The enhancedFeatureExtractorDigit() function preserves information and maps '+' to 1 and '#' to 2.
+
     ##
     """
-    # features =  basicFeatureExtractorDigit(datum)
+    features =  basicFeatureExtractorDigit(datum)
 
     "*** YOUR CODE HERE ***"
-    features = util.Counter()
-    for x in range(DIGIT_DATUM_WIDTH):
-        for y in range(DIGIT_DATUM_HEIGHT):
-            features[(x,y)] = datum.getPixel(x,y)
 
     return features
 
@@ -199,7 +194,7 @@ def readCommand( argv ):
     from optparse import OptionParser
     parser = OptionParser(USAGE_STRING)
 
-    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest'], default='mostFrequent')
+    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'neuralnet', 'perceptron', 'pytorch'], default='mostFrequent')
     parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces'], default='digits')
     parser.add_option('-t', '--training', help=default('The size of the training set'), default=100, type="int")
     parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
@@ -211,7 +206,6 @@ def readCommand( argv ):
     parser.add_option('-a', '--autotune', help=default("Whether to automatically tune hyperparameters"), default=False, action="store_true")
     parser.add_option('-i', '--iterations', help=default("Maximum iterations to run training"), default=3, type="int")
     parser.add_option('-s', '--test', help=default("Amount of test data to use"), default=TEST_SET_SIZE, type="int")
-    parser.add_option('-g', '--agentToClone', help=default("Pacman agent to copy"), default=None, type="str")
 
     options, otherjunk = parser.parse_args(argv)
     if len(otherjunk) != 0: raise Exception('Command line input not understood: ' + str(otherjunk))
@@ -280,6 +274,8 @@ def readCommand( argv ):
     #         print ("using smoothing parameter k=%f for naivebayes" %  options.smoothing)
     elif(options.classifier == "perceptron"):
         classifier = perceptron.PerceptronClassifier(legalLabels, options.iterations)
+    elif(options.classifier == "neuralnet"):
+        classifier = neuralnet.NeuralNetClassifier(legalLabels, options.iterations)
     # elif(options.classifier == "mira"):
     #     if options.data != 'pacman':
     #         classifier = mira.MiraClassifier(legalLabels, options.iterations)
@@ -339,6 +335,7 @@ def runClassifier(args, options):
 
     # Extract features
     print ("Extracting features...")
+    # print(rawTrainingData[0])
     trainingData = list(map(featureFunction, rawTrainingData)) # converted to list
     validationData = list(map(featureFunction, rawValidationData)) # converted to list
     testData = list(map(featureFunction, rawTestData)) # converted to list
