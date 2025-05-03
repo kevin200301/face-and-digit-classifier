@@ -30,7 +30,6 @@ DIGIT_DATUM_WIDTH=28
 DIGIT_DATUM_HEIGHT=28
 FACE_DATUM_WIDTH=60
 FACE_DATUM_HEIGHT=70
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def basicFeatureExtractorDigit(datum):
@@ -281,12 +280,12 @@ def readCommand( argv ):
             classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
         else:
             classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
-
     elif(options.classifier == "pytorch"):
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if options.data == 'digits':
-            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT).to(DEVICE)
+            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT, device).to(device)
         elif options.data == 'faces':
-            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, FACE_DATUM_WIDTH, FACE_DATUM_HEIGHT).to(DEVICE)
+            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, FACE_DATUM_WIDTH, FACE_DATUM_HEIGHT, device).to(device)
     else:
         print ("Unknown classifier:", options.classifier)
         print (USAGE_STRING)

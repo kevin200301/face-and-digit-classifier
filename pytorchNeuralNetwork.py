@@ -17,20 +17,20 @@ def labelToTensor(labels): # convert a list of labels to a tensors
     return torch.tensor(labels, dtype=torch.long)
 
 class PytorchClassifier(classificationMethod.ClassificationMethod, nn.Module):
-    def __init__(self, legalLabels, maxIterations, width, height):
+    def __init__(self, legalLabels, maxIterations, width, height, device):
         classificationMethod.ClassificationMethod.__init__(self, legalLabels)
         nn.Module.__init__(self)
         
         self.linear1 = nn.Linear(width * height, 128)   # First hidden layer
         self.linear2 = nn.Linear(128, 64) # Second hidden layer
-        self.final = nn.Linear(64, len(legalLabels))  # Output layer self.final = nn.Linear(64, len(legalLabels))
+        self.final = nn.Linear(64, len(legalLabels))  # Output layer
         self.relu = nn.ReLU()
 
         self.legalLabels = legalLabels
         self.maxIterations = maxIterations
         self.width = width
         self.height = height
-        self.device = self.device = next(self.parameters()).device
+        self.device = device
         
     def forward(self, image):
         x = image.view(-1, self.width * self.height)  # Flatten the image

@@ -154,3 +154,45 @@ Data: digits
 ['0.05502176284790039']
 30.0
 
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.462539911270142']
+80.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.180598020553589']
+86.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4830782413482666']
+38.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4397518634796143']
+38.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.8682749271392822']
+36.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.515120267868042']
+34.0
+
