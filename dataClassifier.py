@@ -23,6 +23,7 @@ import sys
 import util
 import time
 import torch
+import neuralnet
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
@@ -202,7 +203,7 @@ def readCommand( argv ):
     from optparse import OptionParser
     parser = OptionParser(USAGE_STRING)
 
-    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest', 'pytorch'], default='mostFrequent')
+    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'neuralnet', 'perceptron', 'pytorch'], default='mostFrequent')
     parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces'], default='digits')
     parser.add_option('-t', '--training', help=default('The size of the training set'), default=100, type="int")
     parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
@@ -273,27 +274,14 @@ def readCommand( argv ):
 
     if(options.classifier == "mostFrequent"):
         classifier = mostFrequent.MostFrequentClassifier(legalLabels)
-    # elif(options.classifier == "naiveBayes" or options.classifier == "nb"):
-    #     classifier = naiveBayes.NaiveBayesClassifier(legalLabels)
-    #     classifier.setSmoothing(options.smoothing)
-    #     if (options.autotune):
-    #         print ("using automatic tuning for naivebayes")
-    #         classifier.automaticTuning = True
-    #     else:
-    #         print ("using smoothing parameter k=%f for naivebayes" %  options.smoothing)
     elif(options.classifier == "perceptron"):
         classifier = perceptron.PerceptronClassifier(legalLabels, options.iterations)
-    # elif(options.classifier == "mira"):
-    #     if options.data != 'pacman':
-    #         classifier = mira.MiraClassifier(legalLabels, options.iterations)
-    #     if (options.autotune):
-    #         print ("using automatic tuning for MIRA")
-    #         classifier.automaticTuning = True
-    #     else:
-    #         print ("using default C=0.001 for MIRA")
-    # elif(options.classifier == 'minicontest'):
-    #     import minicontest
-    #     classifier = minicontest.contestClassifier(legalLabels)
+    elif(options.classifier == "neuralnet"):
+        if options.data == 'digits':
+            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
+        else:
+            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
+
     elif(options.classifier == "pytorch"):
         if options.data == 'digits':
             classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT).to(DEVICE)

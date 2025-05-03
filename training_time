@@ -117,3 +117,40 @@ Data: faces
 ['4.11333703994751']
 82.0
 
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.04886198043823242']
+21.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.04221701622009277']
+27.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.05502176284790039']
+30.0
+
