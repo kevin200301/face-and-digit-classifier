@@ -17,16 +17,19 @@
 
 import mostFrequent
 import perceptron
+import pytorchNeuralNetwork
 import samples
 import sys
 import util
 import time
+import torch
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
 DIGIT_DATUM_HEIGHT=28
 FACE_DATUM_WIDTH=60
 FACE_DATUM_HEIGHT=70
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def basicFeatureExtractorDigit(datum):
@@ -199,7 +202,7 @@ def readCommand( argv ):
     from optparse import OptionParser
     parser = OptionParser(USAGE_STRING)
 
-    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest'], default='mostFrequent')
+    parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest', 'pytorch'], default='mostFrequent')
     parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces'], default='digits')
     parser.add_option('-t', '--training', help=default('The size of the training set'), default=100, type="int")
     parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
@@ -247,9 +250,9 @@ def readCommand( argv ):
 
         sys.exit(2)
 
-    if(options.data=="digits"):
+    if(options.data == "digits"):
         legalLabels = [x for x in range(10)]
-    else:
+    elif options.data == "faces":
         legalLabels = [0, 1]
 
     if options.training <= 0:
@@ -291,6 +294,11 @@ def readCommand( argv ):
     # elif(options.classifier == 'minicontest'):
     #     import minicontest
     #     classifier = minicontest.contestClassifier(legalLabels)
+    elif(options.classifier == "pytorch"):
+        if options.data == 'digits':
+            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT).to(DEVICE)
+        elif options.data == 'faces':
+            classifier = pytorchNeuralNetwork.PytorchClassifier(legalLabels, options.iterations, FACE_DATUM_WIDTH, FACE_DATUM_HEIGHT).to(DEVICE)
     else:
         print ("Unknown classifier:", options.classifier)
         print (USAGE_STRING)
@@ -316,14 +324,14 @@ def runClassifier(args, options):
     numTest = options.test
     trainingTime = []
 
-    if(options.data=="faces"):   
+    if(options.data == "faces"):   
         rawTrainingData = samples.loadDataFile("facedata/facedatatrain", numTraining,FACE_DATUM_WIDTH,FACE_DATUM_HEIGHT)
         trainingLabels = samples.loadLabelsFile("facedata/facedatatrainlabels", numTraining)
         rawValidationData = samples.loadDataFile("facedata/facedatatrain", numTest,FACE_DATUM_WIDTH,FACE_DATUM_HEIGHT)
         validationLabels = samples.loadLabelsFile("facedata/facedatatrainlabels", numTest)
         rawTestData = samples.loadDataFile("facedata/facedatatest", numTest,FACE_DATUM_WIDTH,FACE_DATUM_HEIGHT)
         testLabels = samples.loadLabelsFile("facedata/facedatatestlabels", numTest)
-    else:    
+    elif options.data == "digits":    
         rawTrainingData = samples.loadDataFile("digitdata/trainingimages", numTraining,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
         trainingLabels = samples.loadLabelsFile("digitdata/traininglabels", numTraining)
         rawValidationData = samples.loadDataFile("digitdata/validationimages", numTest,DIGIT_DATUM_WIDTH,DIGIT_DATUM_HEIGHT)
@@ -339,9 +347,9 @@ def runClassifier(args, options):
 
     # Extract features
     print ("Extracting features...")
-    trainingData = list(map(featureFunction, rawTrainingData)) # converted to list
-    validationData = list(map(featureFunction, rawValidationData)) # converted to list
-    testData = list(map(featureFunction, rawTestData)) # converted to list
+    trainingData = list(map(featureFunction, rawTrainingData))
+    validationData = list(map(featureFunction, rawValidationData))
+    testData = list(map(featureFunction, rawTestData))
 
     # Conduct training and testing
     print ("Training...")

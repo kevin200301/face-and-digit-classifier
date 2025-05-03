@@ -24,10 +24,10 @@ class PerceptronClassifier(classificationMethod.ClassificationMethod):
     Note that the variable 'datum' in this code refers to a counter of features
     (not to a raw samples.Datum).
     """
-    def __init__( self, legalLabels, max_iterations):
+    def __init__( self, legalLabels, maxIterations):
         self.legalLabels = legalLabels
         self.type = "perceptron"
-        self.max_iterations = max_iterations
+        self.maxIterations = maxIterations
         self.weights = {}
         for label in legalLabels:
             self.weights[label] = util.Counter() # this is the data-structure you should use
@@ -52,7 +52,7 @@ class PerceptronClassifier(classificationMethod.ClassificationMethod):
         # DO NOT ZERO OUT YOUR WEIGHTS BEFORE STARTING TRAINING, OR
         # THE AUTOGRADER WILL LIKELY DEDUCT POINTS.
 
-        for iteration in range(self.max_iterations):
+        for iteration in range(self.maxIterations):
             print("Starting iteration", iteration, "...")
             for i in range(len(trainingData)):
                 real = trainingLabels[i]
