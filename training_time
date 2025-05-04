@@ -196,3 +196,143 @@ Data: digits
 ['1.515120267868042']
 34.0
 
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.05480527877807617']
+34.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.08637380599975586']
+8.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.09706354141235352']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.09162449836730957']
+8.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.08248138427734375']
+12.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.1043701171875']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.09545159339904785']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.15098857879638672']
+7.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.07739830017089844']
+7.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.11683368682861328']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.1251673698425293']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.13813519477844238']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.1360621452331543']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.11403918266296387']
+14.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.2414097785949707']
+64.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.39757513999938965']
+57.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.38430094718933105']
+59.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.2856132984161377']
+67.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.23142790794372559']
+66.0
+
+Classifier: neuralnet
+Data: digits
+100 training
+100 testing
+['0.2606182098388672']
+67.0
+

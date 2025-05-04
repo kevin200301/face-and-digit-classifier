@@ -214,7 +214,6 @@ def readCommand( argv ):
     parser.add_option('-a', '--autotune', help=default("Whether to automatically tune hyperparameters"), default=False, action="store_true")
     parser.add_option('-i', '--iterations', help=default("Maximum iterations to run training"), default=3, type="int")
     parser.add_option('-s', '--test', help=default("Amount of test data to use"), default=TEST_SET_SIZE, type="int")
-    parser.add_option('-g', '--agentToClone', help=default("Pacman agent to copy"), default=None, type="str")
 
     options, otherjunk = parser.parse_args(argv)
     if len(otherjunk) != 0: raise Exception('Command line input not understood: ' + str(otherjunk))
@@ -277,9 +276,9 @@ def readCommand( argv ):
         classifier = perceptron.PerceptronClassifier(legalLabels, options.iterations)
     elif(options.classifier == "neuralnet"):
         if options.data == 'digits':
-            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
+            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 128, 64, 10, options.training, 0.001)
         else:
-            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 50, 10, options.training, 3.5)
+            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 128, 64, 10, options.training, 0.001)
     elif(options.classifier == "pytorch"):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if options.data == 'digits':
