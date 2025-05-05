@@ -4,7 +4,7 @@ import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
 import classificationMethod
 
-def dataToTensor(counter_list, width, height): # convert a list of counters to a tensors
+def dataToTensor(counter_list, width, height): # convert a list of counters to tensors
     tensors = []
     for counter in counter_list:
         image_tensor = torch.zeros(height, width, dtype=torch.float32)
@@ -47,7 +47,7 @@ class PytorchClassifier(classificationMethod.ClassificationMethod, nn.Module):
         trainLoader = DataLoader(trainingData, batch_size=32, shuffle=True)
 
         criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(self.parameters(), lr=0.001)
+        optimizer = optim.Adam(self.parameters(), lr=0.0005) if len(self.legalLabels) == 2 else optim.Adam(self.parameters(), lr=0.01)
 
         nn.Module.train(self) # self.train()
         for epoch in range(self.maxIterations):

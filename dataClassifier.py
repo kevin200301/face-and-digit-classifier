@@ -23,7 +23,7 @@ import sys
 import util
 import time
 import torch
-import neuralnet
+import neuralNetwork
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
@@ -74,7 +74,7 @@ def enhancedFeatureExtractorDigit(datum):
     ## DESCRIBE YOUR ENHANCED FEATURES HERE...
     The basicFeatureExtractorDigit() function converts anything greater than 1 to 1.
     This means that it maps both '+' and '#' to 1, losing information.
-    The enhancedFeatureExtractorDigit() function preserves information and maps '+' to 1 and '#' to 2.
+    The enhancedFeatureExtractorDigit() function preserves information and maps '+' to 0.5 and '#' to 1.
     ##
     """
     # features =  basicFeatureExtractorDigit(datum)
@@ -83,7 +83,12 @@ def enhancedFeatureExtractorDigit(datum):
     features = util.Counter()
     for x in range(DIGIT_DATUM_WIDTH):
         for y in range(DIGIT_DATUM_HEIGHT):
-            features[(x,y)] = datum.getPixel(x,y)
+            if datum.getPixel(x,y) == 0:
+                features[(x,y)] = 0
+            elif datum.getPixel(x,y) == 1:
+                features[(x,y)] = 0.5
+            else:
+                features[(x,y)] = 1
 
     return features
 
@@ -276,9 +281,9 @@ def readCommand( argv ):
         classifier = perceptron.PerceptronClassifier(legalLabels, options.iterations)
     elif(options.classifier == "neuralnet"):
         if options.data == 'digits':
-            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 128, 64, 10, options.training, 0.001)
-        else:
-            classifier = neuralnet.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 128, 64, 10, options.training, 0.001)
+            classifier = neuralNetwork.NeuralNetClassifier(legalLabels, DIGIT_DATUM_WIDTH * DIGIT_DATUM_HEIGHT, 128, 64, 10, options.training, 0.001)
+        elif options.data == 'faces':
+            classifier = neuralNetwork.NeuralNetClassifier(legalLabels, FACE_DATUM_WIDTH * FACE_DATUM_HEIGHT, 128, 64, 1, options.training, 0.001)
     elif(options.classifier == "pytorch"):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if options.data == 'digits':

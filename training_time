@@ -2,337 +2,335 @@ Classifier: pytorch
 Data: faces
 100 training
 100 testing
-['4.379528760910034']
-81.0
-
-Classifier: pytorch
-Data: faces
-100 training
-100 testing
-['4.4929280281066895']
-85.0
-
-Classifier: pytorch
-Data: faces
-100 training
-100 testing
-['4.766262054443359']
-81.0
-
-Classifier: pytorch
-Data: faces
-100 training
-100 testing
-['4.102553844451904']
-83.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.4521489143371582']
-28.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.487401008605957']
-43.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.558607816696167']
-29.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.5624547004699707']
-37.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.468400001525879']
-42.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.4686341285705566']
-29.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.5229549407958984']
-38.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.4495630264282227']
-33.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.545064926147461']
-25.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.464350938796997']
-43.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.4747822284698486']
-39.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.4981358051300049']
-27.0
-
-Classifier: pytorch
-Data: faces
-100 training
-100 testing
-['4.11333703994751']
+['4.694679021835327']
 82.0
 
-Classifier: neuralnet
+Classifier: pytorch
 Data: digits
 100 training
 100 testing
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.04886198043823242']
-21.0
+['1.4473919868469238']
+49.0
 
-Classifier: neuralnet
+Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['0.04221701622009277']
-27.0
+['1.4487578868865967']
+52.0
 
-Classifier: neuralnet
+Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['0.05502176284790039']
-30.0
+['1.5086369514465332']
+53.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.507619857788086']
+41.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.5536839962005615']
+54.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.9254999160766602']
+50.0
 
 Classifier: pytorch
 Data: faces
 100 training
 100 testing
-['4.462539911270142']
+['4.084559917449951']
+78.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.271528959274292']
 80.0
 
 Classifier: pytorch
 Data: faces
 100 training
 100 testing
-['4.180598020553589']
-86.0
+['3.9930617809295654']
+73.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.168028831481934']
+67.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.185542821884155']
+55.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.112606763839722']
+79.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.777940988540649']
+81.0
 
 Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['1.4830782413482666']
-38.0
+['1.4444091320037842']
+53.0
 
 Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['1.4397518634796143']
-38.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.8682749271392822']
-36.0
-
-Classifier: pytorch
-Data: digits
-100 training
-100 testing
-['1.515120267868042']
-34.0
+['1.4475460052490234']
+54.0
 
 Classifier: neuralnet
 Data: digits
 100 training
 100 testing
-['0.05480527877807617']
-34.0
+['0.3473317623138428']
+65.0
 
 Classifier: neuralnet
 Data: digits
 100 training
 100 testing
-['0.08637380599975586']
-8.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.09706354141235352']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.09162449836730957']
-8.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.08248138427734375']
-12.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.1043701171875']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.09545159339904785']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.15098857879638672']
-7.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.07739830017089844']
-7.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.11683368682861328']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.1251673698425293']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.13813519477844238']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.1360621452331543']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.11403918266296387']
-14.0
-
-Classifier: neuralnet
-Data: digits
-100 training
-100 testing
-['0.2414097785949707']
+['0.30303192138671875']
 64.0
 
-Classifier: neuralnet
+Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['0.39757513999938965']
-57.0
+['1.8912081718444824']
+47.0
 
-Classifier: neuralnet
-Data: digits
+Classifier: pytorch
+Data: faces
 100 training
 100 testing
-['0.38430094718933105']
+['4.081398963928223']
+64.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.034856796264648']
+83.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.7901201248168945']
 59.0
 
-Classifier: neuralnet
-Data: digits
+Classifier: pytorch
+Data: faces
 100 training
 100 testing
-['0.2856132984161377']
-67.0
+['4.243377923965454']
+74.0
 
-Classifier: neuralnet
-Data: digits
+Classifier: pytorch
+Data: faces
 100 training
 100 testing
-['0.23142790794372559']
-66.0
+['3.9881608486175537']
+84.0
 
-Classifier: neuralnet
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['3.9711878299713135']
+83.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.014984369277954']
+51.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.09581995010376']
+73.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['3.956865072250366']
+88.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.092517852783203']
+84.0
+
+Classifier: pytorch
 Data: digits
 100 training
 100 testing
-['0.2606182098388672']
-67.0
+['1.4459497928619385']
+42.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4095141887664795']
+46.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4719231128692627']
+33.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4268090724945068']
+30.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4447951316833496']
+57.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4196159839630127']
+58.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4049060344696045']
+57.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4199879169464111']
+51.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.43939208984375']
+54.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.5140573978424072']
+57.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4200198650360107']
+33.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.4734101295471191']
+59.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.422929286956787']
+58.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.207902908325195']
+79.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['4.228986740112305']
+55.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['9.629701137542725']
+82.0
+
+Classifier: pytorch
+Data: faces
+100 training
+100 testing
+['6.229394912719727']
+84.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['4.1479480266571045']
+55.0
+
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['4.042149305343628']
+48.0
 
