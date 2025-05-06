@@ -334,3 +334,217 @@ Data: digits
 ['4.042149305343628']
 48.0
 
+Classifier: pytorch
+Data: digits
+100 training
+100 testing
+['1.9517240524291992']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5868158340454102']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5850100517272949']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5883750915527344']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5875949859619141']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5867319107055664']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.6352179050445557']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.1551361083984375']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.1997668743133545']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.161391019821167']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.1574630737304688']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.739854097366333']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.7441678047180176']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+10 testing
+['1.7163808345794678']
+50.0
+
+Classifier: perceptron
+Data: digits
+100 training
+10 testing
+['1.7243690490722656']
+50.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.7289738655090332']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+101 testing
+['1.7351248264312744']
+48.51485148514851
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.7261781692504883']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.7143120765686035']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['2.285946846008301']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['2.317780017852783']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['2.8587560653686523']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['2.825598955154419']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['3.393172025680542']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['3.3932511806488037']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['3.960297107696533']
+54.0
+
+Classifier: perceptron
+Data: digits
+100 training
+0 testing
+Classifier: perceptron
+Data: digits
+100 training
+1 testing
+['1.7225708961486816']
+0.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['1.737813949584961']
+48.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['0.5856730937957764']
+57.0
+
+Classifier: perceptron
+Data: digits
+100 training
+100 testing
+['5.667649030685425']
+54.0
+
